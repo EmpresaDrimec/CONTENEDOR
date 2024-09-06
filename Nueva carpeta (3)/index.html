@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT Data Viewer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"></script>
+    <script src="js/iot-mqtt.js" defer></script>
+    <script src="js/darkmode.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Visualizador de Datos</h1>
+        <div id="containerTitle">Contenedor 1</div>
+        <button id="darkModeToggle">
+            <i class="fas fa-moon"></i> Modo Nocturno
+        </button>
+    </header>
+
+    <nav class="button-container">
+        <button onclick="showContainer('container1')">Contenedor 1</button>
+        <button onclick="showContainer('container2')">Contenedor 2</button>
+        <button onclick="showContainer('container3')">Contenedor 3</button>
+    </nav>
+
+    <div id="container1" class="container">
+        <!-- Tarjetas para el contenedor 1 -->
+        <div class="card">
+            <i class="fas fa-thermometer-half"></i>
+            <h3>Temperatura</h3>
+            <div id="temperatureValue1">0°C</div>
+            <div class="progress-bar">
+                <div id="temperatureBar1" class="progress"></div>
+            </div>
+        </div>
+        <div class="card">
+            <i class="fas fa-tint"></i>
+            <h3>Humedad</h3>
+            <div id="humidityValue1">0%</div>
+            <div class="progress-bar">
+                <div id="humidityBar1" class="progress"></div>
+            </div>
+        </div>
+        <div class="card">
+            <i class="fas fa-fire"></i>
+            <h3>Detector de Fuego</h3>
+            <div id="fireStatus1">No detectado</div>
+        </div>
+        <div class="card">
+            <i class="fas fa-cube"></i>
+            <h3>Volumen</h3>
+            <div id="volumeValue1">0%</div>
+            <div class="progress-bar">
+                <div id="volumeBar1" class="progress"></div>
+            </div>
+        </div>
+        <div class="card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Latitud</h3>
+            <div id="latitudeValue1">0.0000</div>
+        </div>
+        <div class="card">
+            <i class="fas fa-map-marker"></i>
+            <h3>Longitud</h3>
+            <div id="longitudeValue1">0.0000</div>
+        </div>
+    </div>
+
+    <div id="container2" class="container" style="display: none;">
+        <!-- Tarjetas para el contenedor 2 -->
+        <div class="card">
+            <i class="fas fa-thermometer-half"></i>
+            <h3>Temperatura</h3>
+            <div id="temperatureValue2">0°C</div>
+            <div class="progress-bar">
+                <div id="temperatureBar2" class="progress"></div>
+            </div>
+        </div>
+        <div class="card">
+            <i class="fas fa-tint"></i>
+            <h3>Humedad</h3>
+            <div id="humidityValue2">0%</div>
+            <div class="progress-bar">
+                <div id="humidityBar2" class="progress"></div>
+            </div>
+        </div>
+        <div class="card">
+            <i class="fas fa-fire"></i>
+            <h3>Detector de Fuego</h3>
+            <div id="fireStatus2">No detectado</div>
+        </div>
+        <div class="card">
+            <i class="fas fa-cube"></i>
+            <h3>Volumen</h3>
+            <div id="volumeValue2">0%</div>
+            <div class="progress-bar">
+                <div id="volumeBar2" class="progress"></div>
+            </div>
+        </div>
+        <div class="card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Latitud</h3>
+            <div id="latitudeValue2">0.0000</div>
+        </div>
+        <div class="card">
+            <i class="fas fa-map-marker"></i>
+            <h3>Longitud</h3>
+            <div id="longitudeValue2">0.0000</div>
+        </div>
+    </div>
+
+    <div id="container3" class="container" style="display: none;">
+        <!-- Tarjetas para el contenedor 3 -->
+        <div class="card">
+            <i class="fas fa-thermometer-half"></i>
+            <h3>Temperatura</h3>
+            <div id="temperatureValue3">0°C</div>
+            <div class="progress-bar">
+                <div id="temperatureBar3" class="progress"></div>
+            </div>
+        </div>
+        <div class="card">
+            <i class="fas fa-tint"></i>
+            <h3>Humedad</h3>
+            <div id="humidityValue3">0%</div>
+            <div class="progress-bar">
+                <div id="humidityBar3" class="progress"></div>
+            </div>
+        </div>
+        <div class="card">
+            <i class="fas fa-fire"></i>
+            <h3>Detector de Fuego</h3>
+            <div id="fireStatus3">No detectado</div>
+        </div>
+        <div class="card">
+            <i class="fas fa-cube"></i>
+            <h3>Volumen</h3>
+            <div id="volumeValue3">0%</div>
+            <div class="progress-bar">
+                <div id="volumeBar3" class="progress"></div>
+            </div>
+        </div>
+        <div class="card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Latitud</h3>
+            <div id="latitudeValue3">0.0000</div>
+        </div>
+        <div class="card">
+            <i class="fas fa-map-marker"></i>
+            <h3>Longitud</h3>
+            <div id="longitudeValue3">0.0000</div>
+        </div>
+    </div>
+</body>
+</html>
